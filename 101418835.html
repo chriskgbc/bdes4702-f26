@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Meet Avi, a UX designer who likes making interfaces with room for a little character.">
+    <title>A little about Avi</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --paper: #fff6ec;
+            --peach: #ffe6d8;
+            --pink: #ffd0dc;
+            --rose: #e35a83;
+            --ink: #71372f;
+            --line: #a14c38;
+            --muted: #925e55;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 48px 24px;
+            background: var(--peach);
+            color: var(--ink);
+            font-family: "Courier New", Courier, monospace;
+        }
+        a { color: inherit; text-underline-offset: 5px; }
+        a:focus-visible {
+            outline: 3px solid var(--ink);
+            outline-offset: 5px;
+        }
+        .desktop {
+            width: min(100%, 900px);
+        }
+        .window {
+            overflow: hidden;
+            border: 2px solid var(--line);
+            border-radius: 12px;
+            background: var(--paper);
+            box-shadow: 8px 8px 0 #f4b6ba;
+        }
+        .titlebar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 22px;
+            border-bottom: 2px solid var(--line);
+            background: var(--pink);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: .04em;
+        }
+        .titlebar p { margin: 0; }
+        main {
+            display: grid;
+            grid-template-columns: minmax(0, 1.35fr) minmax(240px, 1fr);
+            gap: 40px;
+            padding: 48px 40px 40px;
+        }
+        h1 {
+            margin: 0 0 24px -5px;
+            font-size: clamp(52px, 7.8vw, 78px);
+            line-height: .98;
+            font-weight: 700;
+            letter-spacing: -.085em;
+        }
+        h1 span { display: block; color: #c63e69; }
+        .about {
+            margin: 0;
+            max-width: 38ch;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+        .side {
+            align-self: center;
+        }
+        .note {
+            overflow: hidden;
+            border: 2px solid var(--line);
+            border-radius: 8px;
+            background: #fffaf4;
+        }
+        .note h2 {
+            margin: 0;
+            padding: 12px 18px;
+            border-bottom: 2px solid var(--line);
+            background: #ffd9bd;
+            font-size: 14px;
+            line-height: 1.4;
+            letter-spacing: .02em;
+        }
+        dl { margin: 0; padding: 20px 18px 22px; }
+        dt {
+            margin-bottom: 7px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+        dd {
+            margin: 0 0 22px;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+        dd:last-child { margin-bottom: 0; }
+        .emoji { font-family: system-ui, sans-serif; font-size: 30px; }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 0 40px;
+            padding: 20px 0 22px;
+            border-top: 1px dashed #b97966;
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.6;
+        }
+        .footer p { margin: 0; color: var(--muted); }
+        .signoff {
+            margin: 18px 3px 0;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.6;
+            text-align: right;
+        }
+        @media (max-width: 680px) {
+            body { padding: 28px 18px; }
+            .titlebar { padding: 12px 18px; }
+            main { grid-template-columns: 1fr; gap: 30px; padding: 32px 24px; }
+            h1 { font-size: clamp(52px, 14vw, 76px); }
+            h1 span { display: inline; }
+            .about { max-width: none; font-size: 14px; }
+            .footer { margin: 0 24px; }
+            .signoff { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <div class="window">
+            <header class="titlebar">
+                <p>101418835.html</p>
+            </header>
+            <main aria-labelledby="welcome">
+                <section aria-label="About Avi">
+                    <h1 id="welcome">Hi, I'm <span>Avi.</span></h1>
+                    <p class="about">I'm a UX designer who likes making interfaces with room for a little character.</p>
+                </section>
+                <aside class="side" aria-labelledby="favourites">
+                    <div class="note">
+                        <h2 id="favourites">a few of my favourites</h2>
+                        <dl>
+                            <dt>Snack</dt>
+                            <dd>Hot fudge sundae</dd>
+                            <dt>My go-to emoji</dt>
+                            <dd class="emoji"><span role="img" aria-label="heart with ribbon">💝</span></dd>
+                        </dl>
+                    </div>
+                </aside>
+            </main>
+            <footer class="footer">
+                <a href="list.html">Back to the class list</a>
+                <p>BDES4702 · Fall 2026</p>
+            </footer>
+        </div>
+        <p class="signoff">made with care, by Avi</p>
+    </div>
+</body>
+</html>
+
