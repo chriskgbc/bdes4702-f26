@@ -1,0 +1,1300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ilham Farah — Digital Experience Designer</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   DESIGN SYSTEM
+========================= */
+
+:root {
+    --cream: #f5f3e9;
+    --ink: #191919;
+    --blue: #293ce8;
+    --orange: #ff713b;
+    --pink: #f3c8df;
+    --green: #dbe6b5;
+    --border: rgba(25,25,25,0.18);
+    --sans: 'Space Grotesk', sans-serif;
+    --serif: 'DM Serif Display', Georgia, serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    overflow-x: hidden;
+}
+
+::selection {
+    background: var(--blue);
+    color: white;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--blue);
+    outline-offset: 5px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+.container {
+    width: min(92%, 1440px);
+    margin: auto;
+}
+
+.eyebrow {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(245,243,233,0.94);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+nav {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: var(--blue);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+.nav-contact {
+    border: 1px solid var(--ink);
+    border-radius: 100px;
+    padding: 12px 22px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-contact:hover {
+    background: var(--ink);
+    color: white !important;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 85px 0 50px;
+}
+
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #368451;
+    box-shadow: 0 0 0 5px rgba(54,132,81,0.12);
+}
+
+.hero-main {
+    position: relative;
+}
+
+.hero h1 {
+    font-size: clamp(66px, 12vw, 180px);
+    line-height: 0.87;
+    font-weight: 700;
+    letter-spacing: -0.085em;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 em {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--blue);
+    letter-spacing: -0.055em;
+}
+
+.hero h1 .last-line {
+    display: block;
+}
+
+.hero-sticker {
+    width: clamp(85px, 13vw, 180px);
+    aspect-ratio: 1;
+    position: absolute;
+    right: 5%;
+    top: 18%;
+    border-radius: 50%;
+    background: var(--orange);
+    display: grid;
+    place-items: center;
+    text-align: center;
+    transform: rotate(12deg);
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-sticker span {
+    font-family: var(--serif);
+    font-size: clamp(14px, 2.3vw, 30px);
+    line-height: 0.95;
+}
+
+.hero-sticker strong {
+    display: block;
+    font-family: var(--sans);
+    font-size: 40px;
+    font-weight: 400;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(12deg);
+    }
+    50% {
+        transform: translateY(-14px) rotate(6deg);
+    }
+}
+
+.hero-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 40px;
+    margin-top: 55px;
+}
+
+.hero-description {
+    max-width: 520px;
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.5;
+    letter-spacing: -0.7px;
+}
+
+.hero-description strong {
+    color: var(--blue);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    border-radius: 100px;
+    padding: 17px 26px;
+    background: var(--ink);
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+    background: var(--blue);
+}
+
+.button-arrow {
+    font-size: 23px;
+}
+
+/* =========================
+   SCROLLING DESIGN STRIP
+========================= */
+
+.marquee {
+    overflow: hidden;
+    background: var(--blue);
+    color: white;
+    padding: 20px 0;
+    border-top: 1px solid var(--ink);
+    border-bottom: 1px solid var(--ink);
+}
+
+.marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 32s linear infinite;
+}
+
+.marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding-right: 35px;
+    white-space: nowrap;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.marquee-group b {
+    color: var(--orange);
+    font-size: 30px;
+    line-height: 1;
+}
+
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+@keyframes marquee {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================
+   SELECTED WORK
+========================= */
+
+.work-section {
+    padding: 110px 0;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    margin-bottom: 42px;
+}
+
+.section-heading h2 {
+    font-size: clamp(48px, 7.5vw, 105px);
+    line-height: 0.95;
+    letter-spacing: -0.075em;
+}
+
+.section-heading h2 em {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.section-heading p {
+    max-width: 260px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+.project-card {
+    grid-column: span 5;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    background: #fffdf6;
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.project-card.wide {
+    grid-column: span 7;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.project-visual {
+    min-height: 300px;
+    aspect-ratio: 1.65;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-visual img {
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.055);
+}
+
+.project-number {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    z-index: 2;
+    background: var(--cream);
+    border: 1px solid var(--ink);
+    padding: 8px 13px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.project-info {
+    padding: 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-category {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #575757;
+    margin-bottom: 14px;
+}
+
+.project-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.project-title h3 {
+    font-size: clamp(26px, 3vw, 40px);
+    line-height: 1.05;
+    letter-spacing: -1.8px;
+}
+
+.project-arrow {
+    flex-shrink: 0;
+    border: 1px solid var(--ink);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.project-card:hover .project-arrow {
+    background: var(--blue);
+    color: white;
+    border-color: var(--blue);
+}
+
+.project-info p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #505050;
+    max-width: 520px;
+}
+
+/* Project-specific colours */
+
+.giveback {
+    background: #ef762f;
+}
+
+.sephora {
+    background: var(--pink);
+}
+
+.yes {
+    background: #efce52;
+}
+
+/* Typographic artwork */
+
+.lion {
+    background: #ded3ae;
+    padding: 45px;
+}
+
+.lion-art {
+    position: relative;
+    z-index: 1;
+    font-family: var(--serif);
+    font-size: clamp(36px, 5vw, 75px);
+    line-height: 0.95;
+    letter-spacing: -2px;
+    max-width: 95%;
+}
+
+.lion-art em {
+    color: #8b3b23;
+}
+
+.lion::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border: 1px solid #8b3b23;
+    border-radius: 50%;
+    right: -55px;
+    bottom: -80px;
+    box-shadow: 0 0 0 25px #ded3ae,
+                0 0 0 26px #8b3b23,
+                0 0 0 50px #ded3ae,
+                0 0 0 51px #8b3b23;
+}
+
+/* Coming soon banner */
+
+.coming-soon {
+    grid-column: span 12;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    background: var(--green);
+}
+
+.coming-soon .project-visual {
+    background: #252525;
+    aspect-ratio: 2;
+}
+
+.coming-soon img {
+    object-fit: contain;
+    padding: 20px;
+}
+
+.coming-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.coming-content h3 {
+    font-size: clamp(38px, 5vw, 75px);
+    letter-spacing: -0.07em;
+    margin: 12px 0;
+}
+
+.coming-content p {
+    line-height: 1.6;
+}
+
+.pill {
+    border: 1px solid var(--ink);
+    padding: 7px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    min-height: 520px;
+}
+
+.about-art {
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-art-text {
+    font-family: var(--serif);
+    font-size: clamp(45px, 7vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -4px;
+    transform: rotate(-7deg);
+    z-index: 1;
+}
+
+.about-art-text em {
+    display: block;
+    color: #fff9e9;
+}
+
+.about-art::before,
+.about-art::after {
+    content: "✳";
+    position: absolute;
+    font-size: 230px;
+    line-height: 1;
+    color: rgba(255,255,255,0.17);
+}
+
+.about-art::before {
+    top: -70px;
+    left: -50px;
+}
+
+.about-art::after {
+    bottom: -100px;
+    right: -35px;
+}
+
+.about-content {
+    padding: clamp(30px, 6vw, 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-content h2 {
+    font-size: clamp(38px, 5vw, 65px);
+    letter-spacing: -3px;
+    line-height: 1;
+    margin: 24px 0;
+}
+
+.about-content h2 em {
+    font-family: var(--serif);
+    font-weight: 400;
+    color: var(--blue);
+}
+
+.about-content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 580px;
+}
+
+.text-link {
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--ink);
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.text-link:hover {
+    color: var(--blue);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: var(--blue);
+    color: white;
+    padding: 90px 0 35px;
+}
+
+.contact-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.contact-top .status-dot {
+    background: #c8ed98;
+    box-shadow: 0 0 0 5px rgba(200,237,152,0.18);
+}
+
+.contact-section h2 {
+    font-size: clamp(58px, 12vw, 175px);
+    line-height: 0.85;
+    letter-spacing: -0.075em;
+}
+
+.contact-section h2 em {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 400;
+    color: #f5d0bc;
+}
+
+.contact-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.contact-bottom p {
+    max-width: 460px;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.contact-button {
+    flex-shrink: 0;
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--orange);
+    color: var(--ink);
+    font-weight: 600;
+    transform: rotate(-8deg);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.contact-button span {
+    font-size: 50px;
+}
+
+.contact-button:hover {
+    transform: rotate(0) scale(1.07);
+    background: var(--cream);
+}
+
+footer {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 70px;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        min-height: auto;
+        padding: 90px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(60px, 13vw, 120px);
+    }
+
+    .hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .hero-actions {
+        justify-content: flex-start;
+    }
+
+    .project-card,
+    .project-card.wide {
+        grid-column: span 6;
+    }
+
+    .project-visual {
+        min-height: 240px;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .about-art {
+        min-height: 350px;
+    }
+
+    .coming-soon {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    nav {
+        min-height: 70px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 14px;
+        font-size: 12px;
+    }
+
+    .nav-contact {
+        padding: 9px 12px;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .hero-top {
+        margin-bottom: 40px;
+    }
+
+    .hero-top .eyebrow {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: clamp(49px, 13vw, 80px);
+    }
+
+    .hero-sticker {
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 100px;
+        margin: 25px 0 0 auto;
+    }
+
+    .hero-sticker span {
+        font-size: 17px;
+    }
+
+    .hero-bottom {
+        margin-top: 25px;
+    }
+
+    .work-section {
+        padding: 70px 0;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .project-card,
+    .project-card.wide {
+        grid-column: span 12;
+    }
+
+    .project-grid {
+        gap: 20px;
+    }
+
+    .project-info {
+        padding: 22px;
+    }
+
+    .coming-content {
+        padding: 25px;
+    }
+
+    .contact-section {
+        padding-top: 60px;
+    }
+
+    .contact-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .contact-button {
+        width: 110px;
+        height: 110px;
+    }
+
+    footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* Accessibility: respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<header>
+    <nav class="container">
+        <a href="#" class="logo">ilham<span>.</span>farah</a>
+
+        <div class="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="nav-contact">
+                Let's talk ↗
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero container">
+
+    <div class="hero-top">
+        <div class="location eyebrow">
+            <span class="status-dot"></span>
+            Based in Toronto, CA
+        </div>
+
+        <span class="eyebrow">Independent Creative</span>
+    </div>
+
+    <div class="hero-main">
+
+        <h1>
+            Your creative
+            <em>best friend.</em>
+            <span class="last-line">Period.</span>
+        </h1>
+
+        <div class="hero-sticker" aria-hidden="true">
+            <span>
+                <strong>✳</strong>
+                Made with<br>curiosity.
+            </span>
+        </div>
+
+    </div>
+
+    <div class="hero-bottom">
+
+        <p class="hero-description">
+            Hey, I'm Ilham! A <strong>digital experience
+            designer</strong> creating thoughtful experiences
+            that feel as good as they look.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#work" class="button">
+                Explore my work
+                <span class="button-arrow">↓</span>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SCROLLING STRIP -->
+
+<div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+
+        <div class="marquee-group">
+            UX / UI Design <b>✳</b>
+            Experience Design <b>✳</b>
+            Creative Direction <b>✳</b>
+            Design Research <b>✳</b>
+            Visual Storytelling <b>✳</b>
+            Motion Graphics <b>✳</b>
+        </div>
+
+        <div class="marquee-group">
+            UX / UI Design <b>✳</b>
+            Experience Design <b>✳</b>
+            Creative Direction <b>✳</b>
+            Design Research <b>✳</b>
+            Visual Storytelling <b>✳</b>
+            Motion Graphics <b>✳</b>
+        </div>
+
+    </div>
+</div>
+
+<!-- SELECTED WORK -->
+
+<section class="work-section container" id="work">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">01 / The good stuff</span>
+            <h2>Selected <em>work.</em></h2>
+        </div>
+
+        <p>
+            A collection of ideas brought to life through
+            research, experimentation and creative thinking.
+        </p>
+    </div>
+
+    <div class="project-grid">
+
+        <!-- PROJECT 01 -->
+
+        <a class="project-card wide"
+           href="https://ilhamfarah.framer.website/case-study/the-giveback">
+
+            <div class="project-visual giveback">
+                <span class="project-number">01</span>
+
+                <img
+                    src="https://framerusercontent.com/images/bC7zgCcABX3lOjSLeC2uPch6qI.png"
+                    alt="The GiveBack interactive donation interface"
+                    loading="lazy">
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-category">
+                    UX/UI · Research · Social Impact
+                </div>
+
+                <div class="project-title">
+                    <h3>The GiveBack</h3>
+                    <span class="project-arrow">↗</span>
+                </div>
+
+                <p>
+                    Reimagining donor engagement through an
+                    interactive kiosk concept for Union Station,
+                    designed for Partners In Health Canada.
+                </p>
+
+            </div>
+        </a>
+
+        <!-- PROJECT 02 -->
+
+        <a class="project-card"
+           href="https://ilhamfarah.framer.website/case-study/sephora-pop-up">
+
+            <div class="project-visual sephora">
+                <span class="project-number">02</span>
+
+                <img
+                    src="https://framerusercontent.com/images/xrQQKgenmGmU1q1h1kalYfi0.jpg"
+                    alt="Sephora and Fenty experiential pop-up concept"
+                    loading="lazy">
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-category">
+                    Spatial Design · Brand Experience
+                </div>
+
+                <div class="project-title">
+                    <h3>Sephora Pop Up</h3>
+                    <span class="project-arrow">↗</span>
+                </div>
+
+                <p>
+                    A New York Fashion Week experience bringing
+                    Sephora and Fenty together through an immersive
+                    beauty activation.
+                </p>
+
+            </div>
+        </a>
+
+        <!-- PROJECT 03 -->
+
+        <a class="project-card"
+           href="https://ilhamfarah.framer.website/case-study/until-the-lion-learns-to-speak">
+
+            <div class="project-visual lion">
+                <span class="project-number">03</span>
+
+                <div class="lion-art" aria-hidden="true">
+                    Until the<br>
+                    <em>Lion</em><br>
+                    Learns to<br>
+                    Speak.
+                </div>
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-category">
+                    Motion Design · Cultural Storytelling
+                </div>
+
+                <div class="project-title">
+                    <h3>Until The Lion Learns To Speak</h3>
+                    <span class="project-arrow">↗</span>
+                </div>
+
+                <p>
+                    A motion graphics project exploring Somali
+                    culture, identity and storytelling through
+                    visual interpretation.
+                </p>
+
+            </div>
+        </a>
+
+        <!-- PROJECT 04 -->
+
+        <a class="project-card wide"
+           href="https://ilhamfarah.framer.website/case-study/yes">
+
+            <div class="project-visual yes">
+                <span class="project-number">04</span>
+
+                <img
+                    src="https://framerusercontent.com/images/6ZvkyTpJrDXz6cO9O51uQIM2hGE.png"
+                    alt="YES interactive student experience exhibition"
+                    loading="lazy">
+            </div>
+
+            <div class="project-info">
+
+                <div class="project-category">
+                    Exhibition Design · Interactive Experience
+                </div>
+
+                <div class="project-title">
+                    <h3>YES!</h3>
+                    <span class="project-arrow">↗</span>
+                </div>
+
+                <p>
+                    An interactive exhibition translating the
+                    first-year design student experience into
+                    playful, hands-on activities.
+                </p>
+
+            </div>
+        </a>
+
+        <!-- PROJECT 05 -->
+
+        <article class="coming-soon">
+
+            <div class="project-visual">
+                <span class="project-number">05</span>
+
+                <img
+                    src="https://framerusercontent.com/images/flwkL3VJvP5HSmyzJsvygufMWA.png"
+                    alt="Gallaria project identity"
+                    loading="lazy">
+            </div>
+
+            <div class="coming-content">
+                <span class="pill">Coming soon</span>
+                <h3>GALLARIA.</h3>
+                <p>Something new is in the works. Stay tuned!</p>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about-section" id="about">
+
+    <div class="about-art">
+        <div class="about-art-text">
+            Good design.
+            <em>Better</em>
+            experiences.
+        </div>
+    </div>
+
+    <div class="about-content">
+
+        <span class="eyebrow">02 / A little about me</span>
+
+        <h2>
+            Curious by nature.
+            <em>Creative by choice.</em>
+        </h2>
+
+        <p>
+            I'm a Toronto-based digital experience designer.
+            I believe the best creative work comes from
+            understanding people and making room for
+            experimentation. I bring care and a little bit
+            of fun into every collaboration.
+        </p>
+
+        <a href="https://ilhamfarah.framer.website/about"
+           class="text-link">
+            Get to know me ↗
+        </a>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="contact-top">
+
+            <span class="eyebrow">03 / Say hello</span>
+
+            <div class="location eyebrow">
+                <span class="status-dot"></span>
+                Open to collaboration
+            </div>
+
+        </div>
+
+        <h2>
+            Let's make
+            <em>something good.</em>
+        </h2>
+
+        <div class="contact-bottom">
+
+            <p>
+                Have an interesting idea or a project in mind?
+                I'd love to hear about it. Let's create something
+                meaningful together.
+            </p>
+
+            <a href="https://ilhamfarah.framer.website/contact"
+               class="contact-button">
+                <span>↗</span>
+                Say hello!
+            </a>
+
+        </div>
+
+        <footer>
+
+            <span>© 2026 Ilham Farah. Designed with curiosity.</span>
+
+            <div class="footer-links">
+                <a href="https://ilhamfarah.framer.website/">
+                    Original portfolio
+                </a>
+
+                <a href="#">
+                    Back to top ↑
+                </a>
+            </div>
+
+        </footer>
+
+    </div>
+
+</section>
+
+</main>
+
+</body>
+</html>
